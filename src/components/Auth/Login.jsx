@@ -1,7 +1,7 @@
 import { useState, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../contexts/AuthContext'
-import { FaUserNurse, FaUserInjured, FaSignInAlt } from 'react-icons/fa'
+import { FaUserNurse, FaUserInjured, FaSignInAlt, FaHome } from 'react-icons/fa'
 import { motion } from 'framer-motion'
 
 export default function Login() {
@@ -103,6 +103,18 @@ export default function Login() {
             >
               <FaSignInAlt />
               <span>{isSubmitting ? 'Signing In...' : 'Sign In'}</span>
+            </motion.button>
+
+            {/* Home Button */}
+            <motion.button
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              type="button"
+              onClick={() => navigate('/')}
+              className="w-full bg-gray-600 hover:bg-gray-700 text-white font-medium py-2 px-4 rounded-lg transition-all duration-300 flex items-center justify-center space-x-2"
+            >
+              <FaHome />
+              <span>Go to Home</span>
             </motion.button>
           </form>
           
